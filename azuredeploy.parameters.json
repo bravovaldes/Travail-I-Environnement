@@ -2,5 +2,150 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "location": {
+      "value": "canadacentral"
+    },
+    "osDiskType": {
+      "value": "Premium_LRS"
+    },
+    "addressPrefixes": {
+      "value": [
+        "10.0.0.0/16"
+      ]
+    },
+    "subnets": {
+      "value": [
+        {
+          "name": "default",
+          "properties": {
+            "addressPrefix": "10.0.0.0/20"
+          }
+        }
+      ]
+    },
+    "virtualNetworkId": {
+      "value": "/subscriptions/2ca40756-e319-40dd-84a5-ca8148b8ed59/resourceGroups/TP1_Environement/providers/Microsoft.Network/virtualNetworks/TP1_Environement-vnet"
+    },
+    "virtualNetworkName": {
+      "value": "TP1_Environement-vnet"
+    },
+    "networkSecurityGroups": {
+      "value": [
+        {
+          "name": "basicNsgTP1_Environement-vnet-nic01",
+          "id": "/subscriptions/2ca40756-e319-40dd-84a5-ca8148b8ed59/resourceGroups/TP1_Environement/providers/Microsoft.Network/networkSecurityGroups/basicNsgTP1_Environement-vnet-nic01",
+          "rules": [
+            {
+              "name": "Tcp",
+              "properties": {
+                "priority": 300,
+                "protocol": "Tcp",
+                "access": "Allow",
+                "direction": "Inbound",
+                "sourceAddressPrefix": "*",
+                "sourcePortRange": "*",
+                "destinationAddressPrefix": "*",
+                "destinationPortRange": "80"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "networkInterfaceConfigurations": {
+      "value": [
+        {
+          "name": "TP1_Environement-vnet-nic01",
+          "primary": true,
+          "subnetId": "/subscriptions/2ca40756-e319-40dd-84a5-ca8148b8ed59/resourceGroups/TP1_Environement/providers/Microsoft.Network/virtualNetworks/TP1_Environement-vnet/subnets/default",
+          "applicationGatewayBackendAddressPools": [],
+          "loadBalancerBackendAddressPools": [
+            {
+              "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', parameters('loadBalancerName'), parameters('backendPoolName'))]"
+            }
+          ],
+          "applicationSecurityGroups": [],
+          "loadBalancerInboundNatPools": [],
+          "enableAcceleratedNetworking": false,
+          "nsgName": "basicNsgTP1_Environement-vnet-nic01",
+          "nsgId": "/subscriptions/2ca40756-e319-40dd-84a5-ca8148b8ed59/resourceGroups/TP1_Environement/providers/Microsoft.Network/networkSecurityGroups/basicNsgTP1_Environement-vnet-nic01",
+          "pipName": "publicIp-TP1_Environement-vnet-nic01"
+        }
+      ]
+    },
+    "backendPoolName": {
+      "value": "bepool"
+    },
+    "loadBalancerName": {
+      "value": "loadbalancertp1"
+    },
+    "loadbalancingRuleFrontEndPort": {
+      "value": 80
+    },
+    "loadbalancingRuleBackendEndPort": {
+      "value": 80
+    },
+    "loadbalancingRuleProtocol": {
+      "value": "Tcp"
+    },
+    "InboundNATRuleFrontEndPortRangeStart": {
+      "value": 50000
+    },
+    "vmName": {
+      "value": "TP1VM"
+    },
+    "virtualMachineScaleSetName": {
+      "value": "TP1VM"
+    },
+    "instanceCount": {
+      "value": "2"
+    },
+    "instanceSize": {
+      "value": "Standard_DS1_v2"
+    },
+    "zone": {
+      "value": [
+        "1",
+        "3"
+      ]
+    },
+    "zoneBalance": {
+      "value": "false"
+    },
+    "platformFaultDomainCount": {
+      "value": "1"
+    },
+    "scaleInPolicy": {
+      "value": {
+        "rules": [
+          "Default"
+        ],
+        "forceDeletion": false
+      }
+    },
+    "upgradePolicy": {
+      "value": "Manual"
+    },
+    "hibernationEnabled": {
+      "value": false
+    },
+    "adminUsername": {
+      "value": "bravo"
+    },
+    "adminPassword": {
+      "value": null
+    },
+    "customData": {
+      "value": null
+    },
+    "securityType": {
+      "value": "TrustedLaunch"
+    },
+    "secureBoot": {
+      "value": true
+    },
+    "vTPM": {
+      "value": true
+    }
   }
 }
