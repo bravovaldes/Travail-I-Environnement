@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "AzureResourceGroTP1", "AzureResourceGroTP1.deployproj", "{BC344990-4CF3-40DC-876C-539B026F0E98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC344990-4CF3-40DC-876C-539B026F0E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC344990-4CF3-40DC-876C-539B026F0E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC344990-4CF3-40DC-876C-539B026F0E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC344990-4CF3-40DC-876C-539B026F0E98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C69D9545-A6EE-4B27-98AB-FD46F64B1705}
+	EndGlobalSection
+EndGlobal
